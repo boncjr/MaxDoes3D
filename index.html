@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS Glass Background Replica</title>
+<style>
+/* Full screen frozen gradient background (≈9.5s snapshot) */
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f47a61, #c741b6);
+  background-size: 400% 400%;
+  background-position: 73% 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+}
+
+/* Static translucent squares */
+.square {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+}
+
+/* Glass panel */
+.glass {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 3rem 4rem;
+  text-align: center;
+  color: white;
+}
+
+/* Bottom-left tiny credit */
+.css-glass-credit {
+  position: fixed;
+  bottom: 8px;
+  left: 10px;
+  font-size: 9px; /* smaller but readable */
+  color: rgba(255, 255, 255, 0.55);
+  text-decoration: none;
+  font-family: sans-serif;
+  z-index: 2;
+}
+
+.css-glass-credit span {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: underline;
+}
+
+.css-glass-credit:hover span {
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<!-- Static squares -->
+<div class="square" style="top:10%; left:15%; width:100px; height:100px;"></div>
+<div class="square" style="top:40%; left:70%; width:60px; height:60px;"></div>
+<div class="square" style="top:70%; left:25%; width:80px; height:80px;"></div>
+<div class="square" style="top:20%; left:50%; width:50px; height:50px;"></div>
+<div class="square" style="top:60%; left:80%; width:70px; height:70px;"></div>
+
+<!-- Glass panel -->
+<div class="glass">
+  <h1>MaxDoes3D</h1>
+  <p>Uh, If It Wasn't Obvious, I 3D Print Stuff :)</p> 
+</div>
+
+<!-- Credit -->
+<a class="css-glass-credit" href="https://css.glass" target="_blank" rel="noopener">
+  Style Inspired By <span>Css.Glass</span>
+</a>
+
+</body>
+</html>
